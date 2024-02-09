@@ -1,0 +1,28 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+<center>
+    
+    <h1>Welcome to The LUCKY WHEEL!</h1>
+    <br>
+    <br>
+    <br>
+
+    {% if request.user.is_authenticated %}
+
+        <a class="button" href="{% url 'main:wheel' %}">SPIN THE WHEEL</a>
+
+        <a class='button' href="{% url 'main:logout' %}">LOG OUT</a>
+
+    {% else %}
+
+        <a class="button" id="signup" href="{% url 'main:signup' %}">Sign up</a>
+
+        <a class="button" id="button" href="{% url 'main:user_login' %}">Log in</a>
+
+    {% endif %}
+    
+</center>
+
+{% endblock %}

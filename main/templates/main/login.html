@@ -1,0 +1,71 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+<div class='login_signup'>
+
+    <center>
+
+        <h2>Log in</h2>
+
+        <form method='post' action='.'>
+
+            {% csrf_token %}
+
+            <table class="login_signup_table">
+
+                <tr>
+                    <td>
+
+                        <label for="id_username">Email:</label>
+
+                    </td>
+
+                    <td>
+
+                        {{ form.username }}
+
+                    </td>
+                
+                </tr>
+
+                <tr>
+                    <td>
+
+                        <label for="id_password1">Password:</label>
+
+                    </td>
+
+                    <td>
+
+                        {{ form.password }}
+
+                    </td>
+                
+                </tr>
+
+            </table>
+
+            {% if form.errors or form.non_field_errors %}
+
+            <div>
+
+                {% for field in form %}
+
+                {{ field.errors }}
+                
+                {% endfor %}
+
+            </div>
+
+            {% endif %}            
+
+            <button class="button">LOG IN</button>
+
+        </form>
+
+    </center>
+        
+</div>
+
+{% endblock %}

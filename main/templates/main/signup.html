@@ -1,0 +1,101 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+<div class="login_signup">
+
+    <center>
+
+        <h2>Sign up</h2>
+
+        <form method='post' action='.'>
+
+            {% csrf_token %}
+
+            {{ form.non_field_errors }}
+
+            <span class="helptext">
+
+                <ul>
+
+                    <li>Your password can’t be too similar to your other personal information.</li>
+                    <li>Your password must contain at least 8 characters.</li>
+                    <li>Your password can’t be a commonly used password.</li>
+                    <li>Your password can’t be entirely numeric.</li>
+
+                </ul>
+
+            </span> 
+
+            <table class="login_signup_table">
+
+                <tr>
+                    <td>
+
+                        <label for="id_email">Email:</label>
+
+                    </td>
+
+                    <td>
+
+                        {{ form.email }}
+
+                    </td>
+                
+                </tr>
+
+                <tr>
+                    <td>
+
+                        <label for="id_password1">Password:</label>
+
+                    </td>
+
+                    <td>
+
+                        {{ form.password1 }}
+
+                    </td>
+                
+                </tr>            
+
+                <tr>
+                    <td>
+
+                        <label for="id_password2">Repeat Password:</label>
+
+                    </td>
+
+                    <td>
+
+                        {{ form.password2 }}
+
+                    </td>
+                
+                </tr>
+
+                {% if form.errors or form.non_field_errors %}
+
+                    <div>
+
+                        {% for field in form %}
+
+                        {{ field.errors }}
+                        
+                        {% endfor %}
+
+                    </div>
+
+                {% endif %}
+
+            </table>
+            
+            <button id='button' class="button">SUBMIT</button>
+        
+        </form>
+
+    </center>
+
+</div>
+
+{% endblock %}

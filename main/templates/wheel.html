@@ -1,0 +1,30 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+<center>
+    
+    <h1>Welcome to The LUCKY WHEEL!</h1>
+    <br>
+    <br>
+    <br>
+    <h2>{{ prize }}</h2>
+    <br>
+    <br>
+    <h3>Balance: {{ remain }}</h3>
+    <br>
+    <a class='button' href="{% url 'main:wheel' %}">
+        SPIN!
+    </a>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <a class='button' href="{% url 'main:index' %}">HOME</a>
+    
+
+</center>
+
+{% endblock %}
