@@ -25,7 +25,10 @@ SECRET_KEY = "django-insecure-(vah0jn+usp6pnwer_tt9d*nc%m5@-@+%ytp8qe500ja_au0e_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "0.0.0.0",
+    "lucky-wheel-ytdi.onrender.com",
+]
 
 
 # Application definition
